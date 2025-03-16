@@ -1,0 +1,13 @@
+name : "Deploy to staging"
+on:
+    push:
+        branches:
+            - "main"
+
+jobs:
+    redeploy_everything:
+        name: Deploying everything to staging cluster
+        runs-on: ubuntu-latest
+        steps:
+            - name: SSH into server
+              uses: actions/checkout@v3
